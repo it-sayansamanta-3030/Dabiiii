@@ -1,119 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Little Sis ❤️</title>
-    <!-- SEO Best Practices -->
-    <meta name="description" content="A personal digital memory book for my little sister on Raksha Bandhan.">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Rakhi Dabiiiii ❤️</title>
+  <!-- SEO Best Practices -->
+  <meta name="description" content="A personal digital memory album for my cousin sister on Raksha Bandhan.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Audio element (no autoplay per request, discreet button) -->
-    <audio id="bg-music" loop>
-        <source src="assets/phoolon-ka.mp3" type="audio/mpeg">
-    </audio>
-    <button id="music-toggle" class="music-btn" aria-label="Play Music">
-        <svg id="music-icon-play" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-        <svg id="music-icon-pause" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
-    </button>
-
-    <div class="container">
-        <!-- 1. OPENING SCREEN -->
-        <section class="screen" id="opening">
-            <div class="content fade-in">
-                <h1>For My Little Sis ❤️</h1>
-                <h2 class="subtitle">Happy Raksha Bandhan</h2>
-                <p class="small-text">A little something made from old memories...</p>
-                <button class="primary-btn" id="open-surprise">Open your surprise &rarr;</button>
-            </div>
-        </section>
-
-        <!-- 2. CHILDHOOD MEMORIES -->
-        <section class="screen hidden-section" id="memories">
-            <div class="content">
-                <h2 class="section-title fade-in-scroll">Some memories never get old.</h2>
-                <p class="small-text fade-in-scroll">These photos may be old, but the memories still feel close.</p>
-                
-                <div class="photo-album">
-                    <div class="polaroid photo-main" data-tilt>
-                        <div class="polaroid-image" style="background-image: url('assets/childhood-main.jpg')"></div>
-                        <div class="polaroid-caption">From when you were this little...</div>
-                    </div>
-                    <div class="polaroid photo-small" data-tilt>
-                        <div class="polaroid-image" style="background-image: url('assets/childhood-old.jpg')"></div>
-                    </div>
-                </div>
-
-                <p class="small-text fade-in-scroll bottom-caption">...to all the memories we've made since. ❤️</p>
-                
-                <div class="scroll-indicator">
-                    <span>Scroll</span>
-                    <div class="arrow-down"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. THE DISTANCE / MISSING EACH OTHER -->
-        <section class="screen minimalist hidden-section" id="distance">
-            <div class="content">
-                <p class="large-quote fade-in-scroll">"Somehow, we don't even have a recent picture together."</p>
-                <p class="large-quote fade-in-scroll delay-1">And I really miss that.</p>
-                <p class="small-text fade-in-scroll delay-2">Hopefully, we won't have to wait this long for the next one.</p>
-            </div>
-        </section>
-
-        <!-- 4. HANDWRITTEN LETTER -->
-        <section class="screen letter-screen hidden-section" id="letter">
-            <div class="letter-paper">
-                <p class="handwriting letter-header">Dear little sis, ❤️</p>
-                <div class="letter-body" id="typewriter-container">
-                    <!-- Text will be typed here -->
-                </div>
-                <div class="letter-actions">
-                    <button id="skip-btn" class="text-btn">Skip animation</button>
-                    <button id="replay-btn" class="text-btn" style="display: none;">Read again</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. FINAL INTERACTIVE SURPRISE -->
-        <section class="screen hidden-section" id="surprise">
-            <div class="content">
-                <p class="fade-in-scroll">But wait... 👀</p>
-                <p class="fade-in-scroll delay-1">I kept one little thing for the end.</p>
-                <button class="primary-btn fade-in-scroll delay-2" id="reveal-frame">Open it &rarr;</button>
-
-                <div class="empty-frame-container" id="empty-frame-wrapper" style="display: none;">
-                    <div class="polaroid empty-frame">
-                        <div class="polaroid-image empty-placeholder"></div>
-                        <div class="polaroid-caption">
-                            <span class="memory-tag">MEMORY #03</span>
-                            <span class="coming-soon">Coming soon...</span>
-                        </div>
-                    </div>
-                    <p class="small-text fade-in text-focus-in mt-4">The next time we meet, this won't be empty. ❤️</p>
-                    <button class="primary-btn mt-4" id="go-to-end">Continue &rarr;</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. FINAL SCREEN -->
-        <section class="screen final-screen hidden-section" id="ending">
-            <div class="content text-center">
-                <h2 class="large-text fade-in-scroll">Our next memory is waiting.</h2>
-                <p class="fade-in-scroll delay-1">Reserved for our next picture together. 🫂</p>
-                <p class="fade-in-scroll delay-2">No more waiting this long this time. 😂</p>
-                <h1 class="ending-greeting fade-in-scroll delay-3">Happy Raksha Bandhan,<br>little sis ❤️</h1>
-                <p class="signature fade-in-scroll delay-4">Made with love by your annoying brother.</p>
-            </div>
-        </section>
-    </div>
+  <div class="container">
     
-    <script src="script.js"></script>
+    <!-- Screen 1: Intro -->
+    <section class="screen active" id="screen-1">
+      <div class="content">
+        <h1>Happy Rakhi Dabiiiii ❤️</h1>
+        <button class="continue-arrow continue-btn">
+          <span>Continue</span>
+          &darr;
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 2: Quiz -->
+    <section class="screen" id="screen-2">
+      <div class="content quiz-container">
+        <h2 class="quiz-title">💜 Rakhi Quiz</h2>
+        
+        <!-- Question 1 -->
+        <div class="quiz-question active">
+          <p class="question-text">1. Who is the most annoying brother?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true">A) Me 😎</div>
+            <div class="quiz-option" data-correct="false">B) You 😂</div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-question">
+          <p class="question-text">2. Who is more likely to start a random argument?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false">A) Me 😇</div>
+            <div class="quiz-option" data-correct="true">B) You 😂</div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-question">
+          <p class="question-text">3. Who would win in a fight between us?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false">A) Me 😎</div>
+            <div class="quiz-option" data-correct="true">B) You 😤</div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="quiz-question">
+          <p class="question-text">4. What does a Rakhi represent?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="true">A) A promise of love and protection between siblings ❤️</div>
+            <div class="quiz-option" data-correct="false">B) Just a fancy bracelet 😜</div>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="quiz-question">
+          <p class="question-text">5. Who secretly cares more about the other?</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-correct="false">A) Me ❤️</div>
+            <div class="quiz-option" data-correct="true">B) Both of us ❤️</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Screen 3: Childhood to Now -->
+    <section class="screen" id="screen-3">
+      <div class="content memory-section">
+        <h2 style="font-size: 3rem; margin-bottom: 0.5rem;">When We Were Little… ❤️</h2>
+        <p class="handwritten-text" style="font-size: 1.6rem; margin-bottom: 2rem;">Before we knew how many memories we were going to make…</p>
+        
+        <!-- Memory 1 -->
+        <div class="memory-wrapper active">
+          <div class="photo-card">
+            <img src="assets/childhood_1.jpeg" class="photo-img" alt="Memory 1">
+            <div class="reveal-btn-container">
+              <button class="btn reveal-btn">Reveal Memory ❤️</button>
+            </div>
+          </div>
+          <p class="memory-note">Look at us… we were so small back then. ❤️</p>
+        </div>
+
+        <!-- Memory 2 -->
+        <div class="memory-wrapper">
+          <div class="photo-card">
+            <img src="assets/childhood_2.JPG" class="photo-img" alt="Memory 2">
+            <div class="reveal-btn-container">
+              <button class="btn reveal-btn">Reveal Memory ❤️</button>
+            </div>
+          </div>
+          <p class="memory-note">We probably had no idea that these little moments would become memories I’d want to keep forever.</p>
+        </div>
+
+        <!-- Memory 3 -->
+        <div class="memory-wrapper">
+          <div class="photo-card">
+            <img src="assets/childhood_3.JPG" class="photo-img" alt="Memory 3">
+            <div class="reveal-btn-container">
+              <button class="btn reveal-btn">Reveal Memory ❤️</button>
+            </div>
+          </div>
+          <p class="memory-note">From those little kids to who we are today, so much has changed… but somehow, our bond is still the same.</p>
+        </div>
+
+        <div class="page-note">
+          <p class="handwritten-text">And honestly, when I look at these photos, I just smile thinking about how far we’ve come.
+
+These are only the beginning of our memories…
+because there are still so many more to make together. ❤️</p>
+          <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button class="continue-arrow continue-btn" style="margin-top: 1rem; flex-direction: row; font-size: 1.5rem;">
+              <span>Next</span>
+              &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Screen 4: Statue of Unity -->
+    <section class="screen" id="screen-4">
+      <div class="content memory-section">
+        <h2 style="font-size: 3rem; margin-bottom: 0.5rem; color: #d17a7a;">Our First Trip Together…</h2>
+        
+        <div class="memory-wrapper active" style="margin-top: 2rem;">
+          <div class="photo-card">
+            <img src="assets/statue_of_unity.jpg" onerror="this.onerror=null; this.src=this.src.replace('.jpg', '.jpeg')" class="photo-img" alt="Statue of Unity">
+            <div class="reveal-btn-container">
+              <button class="btn reveal-btn">Reveal this memory ❤️</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-note">
+          <p class="handwritten-text">I still remember our first trip to the Statue of Unity. ❤️
+
+It was one of those days that felt different because we were actually out somewhere together, making a memory of our own.
+
+I remember the excitement of the trip, the little moments we shared, and just having you there with me.
+
+At the time, it was simply a fun day.
+
+But looking at this photo now, I realise that it became one of those memories that I’ll always be happy to look back at.
+
+And honestly… I hope this was just the beginning of many more trips we get to take together.</p>
+          <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button class="continue-arrow continue-btn" style="margin-top: 1rem; flex-direction: row; font-size: 1.5rem;">
+              <span>Next Memory</span>
+              &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 5: Science City -->
+    <section class="screen" id="screen-5">
+      <div class="content memory-section">
+        <h2 style="font-size: 3rem; margin-bottom: 0.5rem; color: #d17a7a;">And Then… Science City 🔭❤️</h2>
+        
+        <div class="memory-wrapper active" style="margin-top: 2rem;">
+          <div class="photo-card">
+            <img src="assets/science_city.jpg" onerror="this.onerror=null; this.src=this.src.replace('.jpg', '.jpeg')" class="photo-img" alt="Science City">
+            <div class="reveal-btn-container">
+              <button class="btn reveal-btn">Reveal this memory ❤️</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-note">
+          <p class="handwritten-text">And then came our Science City memory. ❤️
+
+Another day, another place, and another little chapter added to our story.
+
+I love how when I look back at these photos, I don’t just remember where we went…
+
+I remember that we were together, enjoying the moment and making memories without even thinking about how special they might feel later.
+
+Maybe that’s what makes these memories so nice — we weren’t trying to create perfect moments.
+
+We were just being us.
+
+And I hope we keep doing exactly that.
+
+Two places, a few photos… and so many memories. ❤️</p>
+          <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button class="continue-arrow continue-btn" style="margin-top: 1rem; flex-direction: row; font-size: 1.5rem;">
+              <span>There’s still more to our story</span>
+              &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 6: Your First Bhai Dooj -->
+    <section class="screen" id="screen-6">
+      <div class="content memory-section">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Your First Bhai Dooj ❤️</h2>
+        
+        <!-- Memory 1 -->
+        <div class="memory-wrapper active">
+          <div class="photo-card">
+            <img src="assets/bhaidooj_1.jpg" onerror="this.onerror=null; this.src=this.src.replace('.jpg', '.jpeg')" class="photo-img" alt="First Bhai Dooj 1">
+            <div class="reveal-btn-container">
+              <button class="btn reveal-btn">Reveal Memory ❤️</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-note">
+          <p class="handwritten-text">I still remember your first Bhai Dooj. ❤️
+
+I remember how that day felt, how we spent time together, and all the little moments that made the day special.
+
+Back then, we probably didn't think much about taking these photos or keeping these moments forever.
+
+But now, looking at them again, I’m really glad we did.
+
+Because years later, I can look at these pictures and remember that day almost like it was yesterday.
+
+This is one of those memories that will always have a special place in our little story.
+
+And I hope we get to make many more memories like this together. ❤️
+
+One more memory added to our story… ❤️</p>
+          <div style="display: flex; justify-content: flex-end; width: 100%;">
+            <button class="continue-arrow continue-btn" style="margin-top: 1rem; flex-direction: row; font-size: 1.5rem;">
+              <span>Next Memory</span>
+              &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Screen 7: The Last Village Memory -->
+    <section class="screen" id="screen-7">
+      <div class="content memory-section">
+        <style>
+          #village-photo { transition: filter 1.5s ease-in-out, transform 4s ease-out; transform: scale(1); }
+          .photo-card.revealed #village-photo { transform: scale(1.05); }
+          
+          .village-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+            align-items: center;
+          }
+          
+          @media (min-width: 768px) {
+            .village-layout {
+              flex-direction: row;
+              align-items: flex-start;
+              justify-content: center;
+              gap: 4rem;
+            }
+            .village-photo-container {
+              position: sticky;
+              top: 5rem;
+            }
+            #screen-7 .page-note {
+              margin-top: 0;
+              padding-top: 0;
+              border-top: none;
+              text-align: left;
+            }
+          }
+        </style>
+        
+        <h2 style="font-size: 3rem; margin-bottom: 0.5rem; color: #d17a7a; text-align: center;">One Last Memory… ❤️</h2>
+        <p class="handwritten-text" style="font-size: 1.6rem; margin-bottom: 3rem; text-align: center;">From the last time we met in the village…</p>
+        
+        <div class="village-layout">
+          <!-- Photo Side (Sticky) -->
+          <div class="village-photo-container">
+            <div class="memory-wrapper active" style="margin-bottom: 0;">
+              <div class="photo-card">
+                <img src="assets/village.jpeg" id="village-photo" onerror="this.onerror=null; this.src=this.src.replace('.jpeg', '.jpg')" class="photo-img" alt="Last Village Memory">
+                <div class="reveal-btn-container">
+                  <button class="btn reveal-btn">Reveal this memory ❤️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Side -->
+          <div class="page-note" style="max-width: 500px;">
+            <p class="handwritten-text" style="line-height: 1.8;">I still remember the last time we met in the village. ❤️<br><br>
+I didn't know that day that this simple moment would become something I'd look back at later and miss.<br><br>
+There wasn't anything extraordinary about it… it was just us, spending time together and being ourselves.<br><br>
+But maybe that's what makes this photo special.<br><br>
+Sometimes the simplest moments become the ones we remember the most.<br><br>
+Looking at this now, I don't just remember the day…<br><br>
+I remember how we were, how much we laughed, and how many memories we've already made together.<br><br>
+And even though this is the last village memory for now, I don't want it to feel like an ending.<br><br>
+Because we still have so much ahead of us.<br><br>
+More places.<br>
+More stupid conversations.<br>
+More laughs.<br>
+More fights.<br>
+More photos.<br>
+And a lot more memories.<br><br>
+So let's keep this one here…<br><br>
+and make sure the next one is even better. ❤️<br><br>
+This isn't the last page… it's just where the next chapter begins. ❤️</p>
+            <div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 2rem;">
+              <button class="continue-arrow continue-btn" style="flex-direction: row; font-size: 1.5rem; margin-top: 0;">
+                <span>Continue</span>
+                &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Screen 8: A Letter For You -->
+    <section class="screen" id="screen-8" style="background-color: #fcfaf5;">
+      <style>
+        .letter-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 4rem 1rem;
+          width: 100%;
+          min-height: 100vh;
+        }
+        .intro-text {
+          font-size: 2.2rem;
+          color: #d17a7a;
+          margin-bottom: 2rem;
+          font-family: var(--font-handwriting);
+          transition: opacity 1s ease;
+          text-align: center;
+        }
+        .letter-paper {
+          background: #fffdf9;
+          padding: 3rem 2rem 5rem 2rem;
+          border-radius: 4px;
+          box-shadow: 0px 10px 30px rgba(0,0,0,0.08);
+          color: #333;
+          font-family: var(--font-handwriting);
+          font-size: 1.6rem;
+          line-height: 1.8;
+          max-width: 600px;
+          width: 90%;
+          margin: 0 auto;
+          position: relative;
+          
+          display: none;
+          opacity: 0;
+        }
+        
+        @keyframes gentleFadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .letter-paper.open {
+          display: block;
+          animation: gentleFadeIn 1.5s ease-out forwards;
+        }
+        
+        .letter-content {
+          opacity: 0;
+          animation: gentleFadeIn 1.5s ease-out 0.8s forwards; /* fade in slightly after paper */
+        }
+        
+        .final-letter-note {
+          opacity: 0;
+          text-align: center;
+          margin-top: 4rem;
+          transition: opacity 2s ease-in-out;
+        }
+        .final-letter-note.show {
+          opacity: 1;
+        }
+      </style>
+
+      <div class="letter-container">
+        <h2 class="intro-text" id="intro-text">There’s something I wanted to tell you…</h2>
+        <button class="btn" id="open-letter-btn" style="font-size: 1.3rem; padding: 1rem 2rem;">Open My Letter ❤️</button>
+        
+        <div class="letter-paper" id="letter-paper">
+          <div class="letter-content">
+            <p><strong>Dear Sis, ❤️</strong></p>
+            <p>There's something I really wanted to say to you this Rakhi.</p>
+            <p><strong>I'm sorry I couldn't come.</strong></p>
+            <p>I really wanted to be there.</p>
+            <p>I wanted to spend Rakhi with you, annoy you like always, talk nonsense, laugh together, and just have that time with you.</p>
+            <p>It wasn't that I didn't want to come.</p>
+            <p><strong>I really did.</strong></p>
+            <p>I just couldn't make it happen somehow, and honestly, I'm a little sad about that too.</p>
+            <p>Because Rakhi comes once a year, and I really wanted to be there with you this time.</p>
+            <p>But even though I couldn't come in person, I still didn't want this day to pass without doing something for you.</p>
+            <p>That's why I made this.</p>
+            <p>I wanted to put together all these little memories of ours — from when we were kids to all the places we've been, all the random moments, and all those days that became memories without us even realising it.</p>
+            <p>While making this, I kept thinking about how much we've grown up together.</p>
+            <p>We started as two little kids making random memories…</p>
+            <p>and somewhere along the way, you became someone who's much more than just my cousin.</p>
+            <p><strong>You're my sister. ❤️</strong></p>
+            <p>And that's something I don't think I say enough.</p>
+            <p>We might not always talk.</p>
+            <p>We might not always meet.</p>
+            <p>We might annoy each other, argue about stupid things, or make fun of each other.</p>
+            <p>That's just how brothers and sisters are. 😂</p>
+            <p>But underneath all of that, I hope you always know that I care about you.</p>
+            <p>And even when I'm not around, you should always know that your brother is there for you.</p>
+            <p>I really hope this Rakhi isn't just about the fact that I couldn't come.</p>
+            <p>I hope you look at this and remember all the times <strong>we did get to be together.</strong></p>
+            <p>The childhood memories.</p>
+            <p>The trips.</p>
+            <p>The Bhai Dooj.</p>
+            <p>The village.</p>
+            <p>All those little moments.</p>
+            <p>And hopefully, this is just the first collection of many more memories we'll make.</p>
+            <p>Because I don't want our story to end with the memories we already have.</p>
+            <p>I want more.</p>
+            <p>More trips.</p>
+            <p>More random plans.</p>
+            <p>More laughing at things that aren't even funny.</p>
+            <p>More annoying each other.</p>
+            <p>More photos.</p>
+            <p>More days where we don't even realise we're making memories.</p>
+            <p>And next time we meet, I'm definitely making up for missing this Rakhi. ❤️</p>
+            <p>So, Sis…</p>
+            <p><strong>I'm really sorry I couldn't come.</strong></p>
+            <p>But please don't ever think that not being there means I wasn't thinking about you.</p>
+            <p>I was.</p>
+            <p>And I hope this little website makes you feel like, even though I couldn't physically be there…</p>
+            <p><strong>a little piece of me still was. ❤️</strong></p>
+            <p>Happy Rakhi to my sister.<br>Keep smiling, keep annoying everyone, and don't change too much. 😂</p>
+            <p>And remember —</p>
+            <p><strong>no matter where we are or how much we grow up, you'll always have your brother. ❤️</strong></p>
+            <p>— Your annoying brother</p>
+            
+            <div class="final-letter-note" id="final-letter-note">
+              <p style="font-size: 2.5rem; color: #d17a7a; margin-bottom: 2rem;">Some memories are worth keeping forever. ❤️</p>
+              <p style="font-size: 1.8rem;">And this story isn't over…</p>
+              <button class="continue-arrow continue-btn" id="final-continue-btn" style="margin: 2rem auto 0; font-size: 1.5rem; flex-direction: row; text-align: center;">
+                <span>Continue</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById('open-letter-btn').addEventListener('click', function() {
+          this.style.display = 'none';
+          document.getElementById('intro-text').style.opacity = '0';
+          setTimeout(() => {
+            document.getElementById('intro-text').style.display = 'none';
+            document.getElementById('letter-paper').classList.add('open');
+            
+            // Fade in the final note after 10 seconds to give them time to read, 
+            // or they will just see it when they scroll down.
+            setTimeout(() => {
+              document.getElementById('final-letter-note').classList.add('show');
+            }, 5000);
+          }, 800);
+        });
+      </script>
+    </section>
+
+    <!-- Screen 9: Gift Box -->
+    <section class="screen" id="screen-9" style="background-color: #fdfbf7;">
+      <style>
+        .gift-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          min-height: 100vh;
+        }
+        .gift-box {
+          font-size: 8rem;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+          animation: float 3s ease-in-out infinite;
+          user-select: none;
+        }
+        .gift-box:hover {
+          transform: scale(1.1) rotate(5deg);
+        }
+        .gift-box:active {
+          transform: scale(0.9);
+        }
+        .gift-message {
+          font-family: var(--font-handwriting);
+          font-size: 2.5rem;
+          color: #d17a7a;
+          margin-top: 2rem;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.8s ease;
+          text-align: center;
+        }
+        .gift-message.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+        .gift-box.opened {
+          animation: pop 0.5s ease-out forwards;
+          pointer-events: none;
+        }
+        @keyframes pop {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.3) rotate(-10deg); }
+          100% { transform: scale(1.1) rotate(0); }
+        }
+      </style>
+
+      <div class="gift-container">
+        <h2 class="handwritten-text" style="font-size: 2.5rem; margin-bottom: 3rem; color: #333; transition: opacity 0.5s;" id="gift-instruction">One last thing…</h2>
+        <div class="gift-box" id="the-gift-box">🎁</div>
+        <div class="gift-message" id="the-gift-message">
+          Your Rakhi gift has been delivered! ❤️
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById('the-gift-box').addEventListener('click', function() {
+          this.classList.add('opened');
+          
+          // Switch icon with a slight delay for impact
+          setTimeout(() => {
+            this.innerHTML = '🎉';
+          }, 150);
+          
+          document.getElementById('gift-instruction').style.opacity = '0';
+          setTimeout(() => {
+            document.getElementById('the-gift-message').classList.add('show');
+          }, 400);
+        });
+      </script>
+    </section>
+
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
