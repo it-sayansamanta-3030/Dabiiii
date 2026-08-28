@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Little Sis ❤️</title>
+    <!-- SEO Best Practices -->
+    <meta name="description" content="A personal digital memory book for my little sister on Raksha Bandhan.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Audio element (no autoplay per request, discreet button) -->
+    <audio id="bg-music" loop>
+        <source src="assets/phoolon-ka.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle" class="music-btn" aria-label="Play Music">
+        <svg id="music-icon-play" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        <svg id="music-icon-pause" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+    </button>
+
+    <div class="container">
+        <!-- 1. OPENING SCREEN -->
+        <section class="screen" id="opening">
+            <div class="content fade-in">
+                <h1>For My Little Sis ❤️</h1>
+                <h2 class="subtitle">Happy Raksha Bandhan</h2>
+                <p class="small-text">A little something made from old memories...</p>
+                <button class="primary-btn" id="open-surprise">Open your surprise &rarr;</button>
+            </div>
+        </section>
+
+        <!-- 2. CHILDHOOD MEMORIES -->
+        <section class="screen hidden-section" id="memories">
+            <div class="content">
+                <h2 class="section-title fade-in-scroll">Some memories never get old.</h2>
+                <p class="small-text fade-in-scroll">These photos may be old, but the memories still feel close.</p>
+                
+                <div class="photo-album">
+                    <div class="polaroid photo-main" data-tilt>
+                        <div class="polaroid-image" style="background-image: url('assets/childhood-main.jpg')"></div>
+                        <div class="polaroid-caption">From when you were this little...</div>
+                    </div>
+                    <div class="polaroid photo-small" data-tilt>
+                        <div class="polaroid-image" style="background-image: url('assets/childhood-old.jpg')"></div>
+                    </div>
+                </div>
+
+                <p class="small-text fade-in-scroll bottom-caption">...to all the memories we've made since. ❤️</p>
+                
+                <div class="scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. THE DISTANCE / MISSING EACH OTHER -->
+        <section class="screen minimalist hidden-section" id="distance">
+            <div class="content">
+                <p class="large-quote fade-in-scroll">"Somehow, we don't even have a recent picture together."</p>
+                <p class="large-quote fade-in-scroll delay-1">And I really miss that.</p>
+                <p class="small-text fade-in-scroll delay-2">Hopefully, we won't have to wait this long for the next one.</p>
+            </div>
+        </section>
+
+        <!-- 4. HANDWRITTEN LETTER -->
+        <section class="screen letter-screen hidden-section" id="letter">
+            <div class="letter-paper">
+                <p class="handwriting letter-header">Dear little sis, ❤️</p>
+                <div class="letter-body" id="typewriter-container">
+                    <!-- Text will be typed here -->
+                </div>
+                <div class="letter-actions">
+                    <button id="skip-btn" class="text-btn">Skip animation</button>
+                    <button id="replay-btn" class="text-btn" style="display: none;">Read again</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FINAL INTERACTIVE SURPRISE -->
+        <section class="screen hidden-section" id="surprise">
+            <div class="content">
+                <p class="fade-in-scroll">But wait... 👀</p>
+                <p class="fade-in-scroll delay-1">I kept one little thing for the end.</p>
+                <button class="primary-btn fade-in-scroll delay-2" id="reveal-frame">Open it &rarr;</button>
+
+                <div class="empty-frame-container" id="empty-frame-wrapper" style="display: none;">
+                    <div class="polaroid empty-frame">
+                        <div class="polaroid-image empty-placeholder"></div>
+                        <div class="polaroid-caption">
+                            <span class="memory-tag">MEMORY #03</span>
+                            <span class="coming-soon">Coming soon...</span>
+                        </div>
+                    </div>
+                    <p class="small-text fade-in text-focus-in mt-4">The next time we meet, this won't be empty. ❤️</p>
+                    <button class="primary-btn mt-4" id="go-to-end">Continue &rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FINAL SCREEN -->
+        <section class="screen final-screen hidden-section" id="ending">
+            <div class="content text-center">
+                <h2 class="large-text fade-in-scroll">Our next memory is waiting.</h2>
+                <p class="fade-in-scroll delay-1">Reserved for our next picture together. 🫂</p>
+                <p class="fade-in-scroll delay-2">No more waiting this long this time. 😂</p>
+                <h1 class="ending-greeting fade-in-scroll delay-3">Happy Raksha Bandhan,<br>little sis ❤️</h1>
+                <p class="signature fade-in-scroll delay-4">Made with love by your annoying brother.</p>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
